@@ -1537,7 +1537,7 @@
       </div>
       <div class="slider-row">
         <button class="step-btn" onclick="step(-0.5)">−</button>
-        <div class="slider-track"><div class="slider-fill" id="tempFill" style="width: 60%"></div></div>
+        <div class="slider-track" data-slider="temp"><div class="slider-fill" id="tempFill" style="width: 60%"></div></div>
         <button class="step-btn" onclick="step(0.5)">+</button>
       </div>
       <div class="slider-marks"><span>30℃</span><span>35℃</span><span>40℃</span><span>45℃</span></div>
@@ -2009,7 +2009,7 @@
       </div>
       <div class="slider-row">
         <button class="step-btn" onclick="envStep('air',-1)">−</button>
-        <div class="slider-track"><div class="slider-fill" id="airFill" style="width: 40%"></div></div>
+        <div class="slider-track" data-slider="air"><div class="slider-fill" id="airFill" style="width: 40%"></div></div>
         <button class="step-btn" onclick="envStep('air',1)">+</button>
       </div>
 
@@ -2023,7 +2023,7 @@
       </div>
       <div class="slider-row">
         <button class="step-btn" onclick="envStep('light',-10)">−</button>
-        <div class="slider-track"><div class="slider-fill" id="lightFill" style="width: 30%"></div></div>
+        <div class="slider-track" data-slider="light"><div class="slider-fill" id="lightFill" style="width: 30%"></div></div>
         <button class="step-btn" onclick="envStep('light',10)">+</button>
       </div>
 
@@ -2124,6 +2124,45 @@
       el.textContent = cur.length >= 3 ? '' : cur + '.';
     });
   }, 400);
+
+  // ====== 滑块可拖动/点击定位 ======
+  document.querySelectorAll('.slider-track[data-slider]').forEach(track => {
+    const kind = track.dataset.slider;
+    const setByPct = (pct) => {
+      pct = Math.max(0, Math.min(100, pct));
+      if (kind === 'temp') {
+        const newTemp = 30 + (pct / 100) * 15;
+        const target = Math.round(newTemp * 2) / 2; // 接近的 0.5 步长
+        temp = target;
+        document.getElementById('tempNum').textContent = target.toFixed(1);
+        document.getElementById('tempFill').style.width = ((target - 30) / 15) * 100 + '%';
+      } else if (kind === 'air') {
+        const target = Math.round(pct / 20); // 0-5
+        envState.air = target;
+        document.querySelector('#airFill').style.width = (target * 20) + '%';
+        document.querySelector('#airFill').closest('.slider-row').previousElementSibling.querySelector('.big-num').textContent = target;
+      } else if (kind === 'light') {
+        const target = Math.round(pct / 10) * 10; // 10 步长
+        envState.light = target;
+        document.querySelector('#lightFill').style.width = target + '%';
+        document.querySelector('#lightFill').closest('.slider-row').previousElementSibling.querySelector('.big-num').textContent = target;
+      }
+    };
+    const handleEvent = (e) => {
+      e.preventDefault();
+      const rect = track.getBoundingClientRect();
+      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      setByPct((x / rect.width) * 100);
+    };
+    let dragging = false;
+    track.style.cursor = 'pointer';
+    track.addEventListener('mousedown', e => { dragging = true; handleEvent(e); });
+    track.addEventListener('touchstart', e => { dragging = true; handleEvent(e); }, { passive: false });
+    document.addEventListener('mousemove', e => { if (dragging) handleEvent(e); });
+    document.addEventListener('touchmove', e => { if (dragging) handleEvent(e); }, { passive: false });
+    document.addEventListener('mouseup', () => { dragging = false; });
+    document.addEventListener('touchend', () => { dragging = false; });
+  });
 
   // ====== 药浴页：水温滑块 ======
   let temp = 38.5;
