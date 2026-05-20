@@ -1113,14 +1113,6 @@
 <body>
 
 <!-- 演示控制器（左上角，演示用） -->
-<div class="demo-control">
-  <b>检测页 · 状态切换</b>
-  <button data-state="S0" class="active">① 开始检测</button>
-  <button data-state="A">② 检测中</button>
-  <button data-state="B">③ 检测完成</button>
-  <button id="resetBtn" style="margin-top: 6px; background: #fff8e0;">↻ 重置从头演示</button>
-</div>
-
 <div class="phone">
 
   <div class="statusbar">
@@ -2056,9 +2048,6 @@
 
   // ====== 检测页状态切换 (S0 / A / B) ======
   function showState(state) {
-    document.querySelectorAll('.demo-control button[data-state]').forEach(b => b.classList.remove('active'));
-    const ctrl = document.querySelector(`[data-state="${state}"]`);
-    if (ctrl) ctrl.classList.add('active');
     document.querySelectorAll('.state').forEach(s => s.classList.remove('active'));
     document.getElementById(`state-${state}`).classList.add('active');
     const sc = document.querySelector('#tab-detect .scroll');
@@ -2069,12 +2058,6 @@
     showState('A');
     setTimeout(() => showState('B'), 5000);
   });
-
-  document.querySelectorAll('.demo-control button[data-state]').forEach(btn => {
-    btn.addEventListener('click', () => showState(btn.dataset.state));
-  });
-
-  document.getElementById('resetBtn').addEventListener('click', () => showState('S0'));
 
   // 检测中动态点点点
   setInterval(() => {
