@@ -890,6 +890,12 @@
     width: 100px; height: 65px;
     flex-shrink: 0;
   }
+  .device-photo {
+    width: 110px;
+    height: auto;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
   .device-info { flex: 1; }
   .device-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
   .device-meta { font-size: 11px; color: var(--text-3); line-height: 1.5; }
@@ -1409,20 +1415,7 @@
   <div class="scroll">
 
     <div class="card device-card">
-      <svg class="device-svg" viewBox="0 0 200 130">
-        <ellipse cx="100" cy="118" rx="75" ry="6" fill="#E5DBC8" opacity=".5"/>
-        <path d="M30 50 L30 95 Q30 110 50 112 L150 112 Q170 110 170 95 L170 50 Q170 38 158 36 L42 36 Q30 38 30 50z" fill="#FAF3E8" stroke="#D8C9B0" stroke-width="1.5"/>
-        <path d="M40 65 Q60 60 80 64 T120 63 T160 65 L160 95 Q160 105 145 105 L55 105 Q40 105 40 95 Z" fill="#B8CCE3" opacity=".6"/>
-        <path d="M45 67 Q65 63 85 67 T125 66 T155 68" fill="none" stroke="#7797C0" stroke-width="1" opacity=".5"/>
-        <rect x="75" y="22" width="50" height="14" rx="3" fill="#7797C0"/>
-        <circle cx="85" cy="29" r="2" fill="#FAE7A0"/>
-        <circle cx="100" cy="29" r="2" fill="#fff" opacity=".8"/>
-        <circle cx="115" cy="29" r="2" fill="#fff" opacity=".8"/>
-        <rect x="35" y="40" width="14" height="10" rx="2" fill="#D9B271" opacity=".6"/>
-        <circle cx="60" cy="85" r="2" fill="#fff" opacity=".8" class="bubble bubble-1"/>
-        <circle cx="100" cy="90" r="1.5" fill="#fff" opacity=".8" class="bubble bubble-2"/>
-        <circle cx="140" cy="82" r="2.5" fill="#fff" opacity=".8" class="bubble bubble-3"/>
-      </svg>
+      <img class="device-photo" src="assets/yaoyu-bath.png" alt="智能药浴盆"/>
       <div class="device-info">
         <div class="device-name">智能药浴盆 Pro</div>
         <div class="device-meta">已连接 · WiFi · 电量 86%</div>
