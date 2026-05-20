@@ -685,6 +685,18 @@
     border-radius: 12px;
     padding: 8px;
   }
+  .dog-photo-wrap {
+    background: rgba(255,255,255,.6);
+    border-radius: 12px;
+    padding: 6px;
+    margin-top: 4px;
+  }
+  .dog-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
 
   /* 部位列表 */
   .part-row {
@@ -1534,32 +1546,10 @@
           </svg>
         </div>
       </div>
-      <!-- 狗身体侧视图 + 部位标注 -->
-      <svg class="dog-body" viewBox="0 0 320 130">
-        <!-- 狗身体轮廓 -->
-        <path d="M40 80 Q35 60 50 55 L60 50 Q70 35 85 40 L100 38 Q115 32 130 38 L150 38 Q175 35 200 40 L240 42 Q270 45 285 60 Q295 70 285 78 L275 80 L268 90 L260 92 L255 105 L240 105 L235 92 L165 92 L160 108 L145 108 L140 92 L130 90 L100 88 Q70 88 55 92 L48 95 L42 92 Z"
-          fill="#FAF3E8" stroke="#D8C9B0" stroke-width="1.5"/>
-        <!-- 头 -->
-        <circle cx="285" cy="55" r="12" fill="#FAF3E8" stroke="#D8C9B0" stroke-width="1.5"/>
-        <path d="M280 48 L278 38 L283 42 Z M289 48 L292 38 L294 44 Z" fill="#D8C9B0"/>
-        <circle cx="288" cy="54" r="1" fill="#3A3833"/>
-        <!-- 尾 -->
-        <path d="M40 75 Q25 70 22 60" fill="none" stroke="#D8C9B0" stroke-width="3" stroke-linecap="round"/>
-        <!-- 部位标注 -->
-        <circle cx="265" cy="62" r="7" fill="#D9B271" opacity=".85"><animate attributeName="r" values="6;9;6" dur="2.5s" repeatCount="indefinite"/></circle>
-        <circle cx="180" cy="58" r="7" fill="#7797C0" opacity=".85"/>
-        <circle cx="120" cy="78" r="7" fill="#8AAE8E" opacity=".85"/>
-        <circle cx="80" cy="72" r="7" fill="#7797C0" opacity=".85"/>
-        <circle cx="245" cy="100" r="7" fill="#C97B7B" opacity=".85"><animate attributeName="r" values="6;9;6" dur="2.2s" repeatCount="indefinite"/></circle>
-        <!-- 标注文字 -->
-        <g font-size="9" fill="#6B6760">
-          <text x="265" y="40">颈肩</text>
-          <text x="180" y="32">背部</text>
-          <text x="115" y="50">腰部</text>
-          <text x="68" y="50">臀部</text>
-          <text x="245" y="120">前腿</text>
-        </g>
-      </svg>
+      <!-- 狗身体侧视图 + 部位标注（原图风格）-->
+      <div class="dog-photo-wrap">
+        <img class="dog-photo" src="assets/relax-dog-body.png" alt="狗身体检测图"/>
+      </div>
     </div>
 
     <!-- 身体放松地图 - 部位列表 -->
