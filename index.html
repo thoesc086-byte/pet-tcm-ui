@@ -491,6 +491,13 @@
     width: 100%; height: 130px;
     margin-bottom: 8px;
   }
+  .kennel-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
   .kennel-score {
     display: flex; align-items: center; gap: 14px;
     background: rgba(255,255,255,.6);
@@ -1757,26 +1764,7 @@
 
     <!-- 狗窝可视化 + 综合评分 -->
     <div class="card kennel-hero">
-      <svg class="kennel-svg" viewBox="0 0 280 130">
-        <!-- 屋顶 -->
-        <path d="M40 60 L140 25 L240 60 L240 65 L140 30 L40 65 Z" fill="#B89072"/>
-        <!-- 屋身 -->
-        <rect x="50" y="60" width="180" height="60" rx="4" fill="#FAF3E8" stroke="#D8C9B0" stroke-width="1.5"/>
-        <!-- 拱形门洞 -->
-        <path d="M120 120 L120 88 Q120 75 140 75 Q160 75 160 88 L160 120 Z" fill="#7797C0" opacity=".6"/>
-        <!-- 门洞内狗影 -->
-        <ellipse cx="140" cy="108" rx="15" ry="8" fill="#B89072" opacity=".7"/>
-        <circle cx="140" cy="100" r="6" fill="#B89072" opacity=".7"/>
-        <!-- 草本香氛粒子 -->
-        <g opacity=".7">
-          <circle cx="80" cy="50" r="2" fill="#8AAE8E"><animate attributeName="cy" values="50;30;10" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;0.5;0" dur="3s" repeatCount="indefinite"/></circle>
-          <circle cx="100" cy="55" r="1.5" fill="#8AAE8E"><animate attributeName="cy" values="55;35;15" dur="3.5s" begin="0.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;0.5;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/></circle>
-          <circle cx="200" cy="50" r="2" fill="#8AAE8E"><animate attributeName="cy" values="50;28;8" dur="3.2s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;0.5;0" dur="3.2s" begin="1s" repeatCount="indefinite"/></circle>
-          <circle cx="220" cy="55" r="1.5" fill="#8AAE8E"><animate attributeName="cy" values="55;35;15" dur="2.8s" begin="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;0.5;0" dur="2.8s" begin="1.5s" repeatCount="indefinite"/></circle>
-        </g>
-        <!-- 地面阴影 -->
-        <ellipse cx="140" cy="123" rx="100" ry="3" fill="#E5DBC8" opacity=".5"/>
-      </svg>
+      <img class="kennel-photo" src="assets/space-kennel.png" alt="草本狗窝"/>
       <div class="kennel-score">
         <div class="score-num">92</div>
         <div class="score-text">
