@@ -1,0 +1,12 @@
+.DS_Store
+*.tmp
+node_modules/
+
+# 大体积放大版/中间产物
+refs/*_2x.*
+refs/*-hd.*
+refs/*-input.*
+refs/*-debug.*
+refs/dog-only*
+refs/_*
+refs/yaoyu/_*
