@@ -1174,6 +1174,23 @@
     margin-left: -14px;
   }
 
+  /* 5 图药材叠加样式 */
+  .herb-photos-5 {
+    width: auto !important;
+    min-width: 96px;
+  }
+  .herb-photos-5 img {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    margin-left: -10px;
+  }
+  .herb-photos-5 img:first-child {
+    margin-left: 0;
+  }
+
 </style>
 </head>
 <body>
@@ -1463,20 +1480,41 @@
       </div>
     </div>
 
-    <div class="card scheme-card">
-      <div class="herb-row">
-        <img src="assets/herbs/jinyinhua.jpg" alt="金银花" title="金银花"/>
-        <img src="assets/herbs/kushen.jpg" alt="苦参" title="苦参"/>
-        <img src="assets/herbs/aiye.jpg" alt="艾叶" title="艾叶"/>
-        <img src="assets/herbs/huangbai.jpg" alt="黄柏" title="黄柏"/>
-        <img src="assets/herbs/bohe.jpg" alt="薄荷" title="薄荷"/>
+    <!-- 药浴草本配方（沿用狗窝草本模块设计） -->
+    <div class="card">
+      <div class="card-title"><span>草本配方</span><span class="more-btn" style="color: var(--warn)">AI 推荐 · 适合皮肤问题</span></div>
+      <div class="herb-card">
+        <div class="herb-icon herb-photos herb-photos-5">
+          <img src="assets/herbs/jinyinhua.jpg" alt="金银花" title="金银花"/>
+          <img src="assets/herbs/kushen.jpg" alt="苦参" title="苦参"/>
+          <img src="assets/herbs/aiye.jpg" alt="艾叶" title="艾叶"/>
+          <img src="assets/herbs/huangbai.jpg" alt="黄柏" title="黄柏"/>
+          <img src="assets/herbs/bohe.jpg" alt="薄荷" title="薄荷"/>
+        </div>
+        <div class="herb-info">
+          <div class="herb-name">舒缓止痒浴包</div>
+          <div class="herb-meta">金银花 · 苦参 · 艾叶 · 黄柏 · 薄荷</div>
+        </div>
+        <button class="herb-change">更换</button>
       </div>
-      <div class="scheme-info">
-        <div class="scheme-tag">当前方案 · AI 推荐</div>
-        <h3 class="scheme-name">舒缓止痒浴包</h3>
-        <div class="scheme-ingredients">金银花 · 苦参 · 艾叶 · 黄柏 · 薄荷</div>
+      <div class="herb-progress">
+        <div class="progress-row">
+          <span class="progress-label">药包剩余</span>
+          <span class="progress-value">12 / 20 次</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
       </div>
-      <button class="scheme-change">更换</button>
+      <div class="herb-progress">
+        <div class="progress-row">
+          <span class="progress-label">草本浓度</span>
+          <span class="progress-value" style="color: var(--primary);">标准</span>
+        </div>
+        <div class="chip-row" style="padding-left: 0;">
+          <span class="chip">温和</span>
+          <span class="chip on">标准</span>
+          <span class="chip">加强</span>
+        </div>
+      </div>
     </div>
 
     <div class="card">
