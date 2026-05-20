@@ -47,3 +47,22 @@ pet-tcm-ui/
 ├── refs/              # 4 个 Tab 的参考 mockup
 └── preview/           # Tab 截图
 ```
+
+## 🌿 药材图片来源
+
+所有药材照片均来自 [Wikimedia Commons](https://commons.wikimedia.org/) 公共领域 / CC 授权：
+
+| 中文名 | 学名 | 用途 |
+|---|---|---|
+| 金银花 | Lonicera japonica | 药浴 |
+| 苦参 | Sophora flavescens | 药浴 |
+| 艾叶 | Artemisia argyi | 药浴 |
+| 黄柏 | Phellodendron amurense | 药浴 |
+| 薄荷 | Mentha | 药浴 / 活力 |
+| 薰衣草 | Lavandula | 安神 |
+| 茉莉 | Jasminum sambac | 安神 |
+| 柏木 | Cupressus | 睡眠 |
+| 檀香 | Santalum album | 睡眠 |
+| 青草 | Grass | 雨天舒缓 |
+| 苔藓 | Bryophyta | 雨天舒缓 |
+| 柠檬 | Lemon | 活力 |
